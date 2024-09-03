@@ -48,7 +48,7 @@ and $$tanh$$ is the hyperbolic tangent activation function. The final output for
 $$h_{t} = o_{t} \times tanh(c_{t})$$
 
 
-where $$h_{t}$$ is then passed as $$h_{t-1}$$ into the next layer within a stacked, multi-layer architecture. Furthermore, the output produced by the Dense (and final) layer within our model is what is passed as $$h_{t-1}$$ for the first LSTM layer within the next timestamp. In this study, a Stacked LSTM of three LSTM layers and one Dense layer with a linear activation was used. All weights and biases were optimized using the _Adam_ Optimizer [9] upon a Mean Squared Error Loss Function.
+where $$h_{t}$$ is then passed as $$h_{t-1}$$ into the next layer within a stacked, multi-layer architecture. Furthermore, the output produced by the Dense (and final) layer within our model is what is passed as $$h_{t-1}$$ for the first LSTM layer within the next timestamp. In this study, a Stacked LSTM of three LSTM layers and one Dense layer, with a linear activation, was used. All weights and biases were optimized using the _Adam_ Optimizer [9] upon a Mean Squared Error Loss Function.
 
 
 # The LSTM Trading Strategy 
