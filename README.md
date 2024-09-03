@@ -51,7 +51,7 @@ $$h_{t} = o_{t} \times tanh(c_{t})$$
 where $$h_{t}$$ is then passed as $$h_{t-1}$$ into the next layer within a stacked, multi-layer architecture. Furthermore, the output produced by the Dense (and final) layer within our model is what is passed as $$h_{t-1}$$ for the first LSTM layer within the next timestamp. In this study, a Stacked LSTM of three LSTM layers and one Dense layer with a linear activation was used. All weights and biases were optimized using the _Adam_ Optimizer [9] upon a Mean Squared Error Loss Function.
 
 
-# The Trading Strategy 
+# The LSTM Trading Strategy 
 
 Because an LSTM already gives a good forecast, a more basic strategy was used [7]. If the forecasted price for tommorow is greater than the closing price of today, buy. If not, hold. 
 
