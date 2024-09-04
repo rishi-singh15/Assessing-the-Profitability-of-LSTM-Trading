@@ -55,6 +55,12 @@ where $$h_{t}$$ is then passed as $$h_{t-1}$$ into the next layer within a stack
 
 Because an LSTM already gives a good forecast, a more basic strategy was used [7]. If the forecasted price for tommorow is greater than the closing price of today, buy. If not, hold. 
 
+# Additional Notes
+
+In this study, four features were used for the Stacked LSTM: Closing Price, Trading Volumne, MACD, and RSI. Sometimes, the use of these technical indicators as features can be effective [10]. While both MACD and RSI are of the same class of momentum indicators, please note that they are not redundant; MACD tracks the moving averages of price over time, while RSI tracks the relative velocities of that price for a given lookback period. In using both these indicators as exogenous features, I sought to explicitize in the training data patterns between price, its historical moving averages, and its historical velocity, in the hope that such explicitness could further encourage the LSTM to focus on learning those specific patterns to gain a predictive advantage. However, whether doing this was ultimately of benefit or not was solely dependent on the performance metrics of the LSTM.
+
+If one wanted to use some but not all of the four features for their LSTM, they would need to merely change which columns they select from `prices_and_exogenous_features`. If you do this, please make sure to also change the corresponding line objects that are then selected for `pd.DataFrame` within the body of `class Prediction(bt.Indicator)`. If one wanted to use a technical indicator other than MACD or RSI as an exogenous feature, they would need to create a function that calculates that indicator. 
+
 
 # References 
 
@@ -75,3 +81,5 @@ Because an LSTM already gives a good forecast, a more basic strategy was used [7
 [8] Bhandari, H. N., Rimal, B., Pokhrel, N. R., Rimal, R., Dahal, K. R., & Khatri, R. K. (2022). Predicting stock market index using LSTM. Machine Learning with Applications, 9, 100320.
 
 [9] Kingma, D. P. (2014). Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980.
+
+[10] Him, C. K., & Pang, G. C. (2023). Stock Trend Prediction Using LSTM with MA, EMA, MACD and RSI Indicators. INTI Journal, 2023.
