@@ -59,7 +59,7 @@ Because an LSTM already gives a good forecast, a more basic strategy was used [7
 
 For the Stacked LSTM, four features were used: Closing Price, Trading Volume, MACD, and RSI. Sometimes, the use of these technical indicators as features can be effective [10]. While both MACD and RSI are of the same class of momentum indicators, please note that they are not redundant; MACD tracks the moving averages of price over time, while RSI tracks the relative velocities of that price for a given lookback period. 
 
-If one wanted to use some but not all of the four features, they would need to merely change which columns they select from `prices_and_exogenous_features`. If you do this, please make sure to also change the corresponding line objects that are then selected for `pd.DataFrame` within the body of `class Prediction(bt.Indicator)`. If one wanted to use a technical indicator other than MACD or RSI as an exogenous feature, they would need to create a function that calculates that indicator. 
+If one wanted to use some but not all of the four features used in this study, they would need to merely change which columns they select from `prices_and_exogenous_features`. If you do this, please make sure to also change the corresponding line objects that are then selected for `pd.DataFrame` within the body of `class Prediction(bt.Indicator)`. If one wanted to use a technical indicator other than MACD or RSI as an exogenous feature, they would need to create a function that calculates that indicator. 
 
 
 # References 
